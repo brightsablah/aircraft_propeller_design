@@ -3,7 +3,7 @@
 /* defining constants*/
 double R = 1.965;                       /* Propeller radius in meters */ 
 double V_inf = 139;                     /* Freestream velocity in m/s */
-double omega = 1200 * 2 * PI / 60;      /* Rotational speed in rad/s */
+double omega = 1200*2*PI/60;      /* Rotational speed in rad/s */
 double rho = 0.652;                     /* Air density at cruise altitude in kg/m^3 */
 double target_thrust = 2090;            /* Target thrust per blade in N */
 int num_sections = 10;                  /* Number of sections along the blade */
@@ -11,15 +11,6 @@ int num_sections = 10;                  /* Number of sections along the blade */
 /* Chord length parameters*/
 double c_root = 0.25;                   /* Root chord length in meters */
 double c_tip = 0.1;                     /* Tip chord length in meters */
-
-// Placeholder function to find an airfoil based on CL
-const char* find_airfoil(double CL) {
-    if (CL >= 0.1 && CL <= 1.2) return "NACA0012";
-    else if (CL > 1.2 && CL <= 1.4) return "NACA2412";
-    else if (CL > 1.4 && CL <= 1.6) return "ClarkY";
-    else if (CL > 1.6 && CL <= 1.8) return "Selig1223";
-    return "No match";
-}
 
 // Function to calculate chord length at a given radial position
 double calculate_chord_length(double r) {

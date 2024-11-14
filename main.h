@@ -3,3 +3,4 @@
 
 #define PI
 
+const char* find_airfoil(double CL);
