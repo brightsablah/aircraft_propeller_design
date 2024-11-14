@@ -1,19 +1,16 @@
-#include <stdio.h>
-#include <math.h>
+#include "main.h"
 
-#define PI 3.141592653589793
+/* defining constants*/
+double R = 1.965;                       /* Propeller radius in meters */ 
+double V_inf = 139;                     /* Freestream velocity in m/s */
+double omega = 1200 * 2 * PI / 60;      /* Rotational speed in rad/s */
+double rho = 0.652;                     /* Air density at cruise altitude in kg/m^3 */
+double target_thrust = 2090;            /* Target thrust per blade in N */
+int num_sections = 10;                  /* Number of sections along the blade */
 
-// Constants
-double R = 1.965;             // Propeller radius in meters
-double V_inf = 139;           // Freestream velocity in m/s
-double omega = 1200 * 2 * PI / 60;  // Rotational speed in rad/s
-double rho = 0.652;           // Air density at cruise altitude in kg/m^3
-double target_thrust = 2090;  // Target thrust per blade in N
-int num_sections = 10;        // Number of sections along the blade
-
-// Chord length parameters
-double c_root = 0.25;         // Root chord length in meters
-double c_tip = 0.1;           // Tip chord length in meters
+/* Chord length parameters*/
+double c_root = 0.25;                   /* Root chord length in meters */
+double c_tip = 0.1;                     /* Tip chord length in meters */
 
 // Placeholder function to find an airfoil based on CL
 const char* find_airfoil(double CL) {
